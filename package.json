@@ -1,0 +1,21 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Ainda não tenho um nome oficial para esse projeto, pretendo criar uma api em nodejs usando express só para relembrar alguns conhecimentos básicos antes de criar um outro projeto novo escrito em nestjs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lohran-mendes/api-rest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/lohran-mendes/api-rest/issues"
+  },
+  "homepage": "https://github.com/lohran-mendes/api-rest#readme"
+}
