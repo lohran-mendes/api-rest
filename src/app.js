@@ -1,28 +1,21 @@
+import livro from "./models/Livro.js";
+import connectDB from "./config/dbConnect.js";
 import express from "express";
 
 const app = express();
 app.use(express.json())
 
-const livros = [
-  {
-    id: 1,
-    titulo: "naruto",
-  },
-  {
-    id: 2,
-    titulo: "Dragon Ball",
-  },
-  {
-    id: 3,
-    titulo: "yu-gi-oh!",
-  },
-];
+const connection = await connectDB()
+
+connection.on("error", (error) => console.error('Erro na conexão com o Banco de Dados', error) )
+connection.once("open", () => console.log("Conexão com o banco de dados estabelecida!"))
 
 app.get("/", (req, res) => {
   res.status(200).send("API-REST funcionando!");
 });
 
-app.get("/livros", (req, res) => {
+app.get("/livros", async (req, res) => {
+  const livros = await livro.find({})
   res.status(200).json(livros);
 });
 
@@ -47,9 +40,5 @@ const index = searchBook(req.params.id)
 livros.splice(index, 1)
 res.status(200).send('Livro foi deletado com sucesso!')
 })
-
-function searchBook (id) {
- return livros.findIndex(livro => livro.id === Number(id))
-}
 
 export default app;
