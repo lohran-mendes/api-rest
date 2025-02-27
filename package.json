@@ -4,7 +4,8 @@
   "description": "Ainda não tenho um nome oficial para esse projeto, pretendo criar uma api em nodejs usando express só para relembrar alguns conhecimentos básicos antes de criar um outro projeto novo escrito em nestjs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/lohran-mendes/api-rest/issues"
   },
-  "homepage": "https://github.com/lohran-mendes/api-rest#readme"
+  "homepage": "https://github.com/lohran-mendes/api-rest#readme",
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
