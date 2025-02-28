@@ -64,6 +64,19 @@ class LivroController {
         .json({ message: `${erro.message}: - Falha na requisição para apagar livro.` });
     }
   }
+
+  static async listarLivrosPorEditora(req, res) {
+    const editora = req.query.editora;
+    try {
+      const livroBuscado = await livro.find({editora: editora})
+      res.status(200).json({message: 'Filtro por editora Realizado!', livro: livroBuscado})
+    } catch (erro) {
+      res
+      .status(500)
+      .json({ message: `${erro.message}: - Falha na requisição para buscar o livro filtrado por editora.` });
+    }
+  }
+  
 }
 
 export default LivroController;
